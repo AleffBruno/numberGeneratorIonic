@@ -1,0 +1,22 @@
+gerar numeros randoms {
+    - deixar escolher o valor minimo
+    - deixar escolher o valor maximo
+    - escolher quantos resultados quer
+    - repetir resultados? ( boolean )
+}
+
+dado {
+    - deixar escolher de quantas faces
+    - escolher quantidade de dados
+    - escolher quantos resultados quer
+}
+
+gerar senha {
+    - tamanho da senha
+    boolean {
+        letras maiusculas
+        letras minutsulas
+        numeros
+        caracateres epeciais
+    }
+}

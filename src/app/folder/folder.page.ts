@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-folder',
@@ -11,7 +12,11 @@ export class FolderPage implements OnInit {
 
   
 
-  constructor(private activatedRoute: ActivatedRoute) { }
+  constructor(private activatedRoute: ActivatedRoute, private router: Router) { }
+
+  goToDice(){
+    this.router.navigate(['/dice'])
+  }
 
   ngOnInit() {
     this.folder = this.activatedRoute.snapshot.paramMap.get('id');
@@ -51,32 +56,7 @@ export class FolderPage implements OnInit {
     console.log("aaa")
   }
 
-  getRandomInt(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
-
-  rollThatDice() {
-    var image = document.getElementById("dice");
-    let diceFaces = [
-      "https://bit.ly/dice-unknown",
-      "https://bit.ly/dice-one",
-      "https://bit.ly/dice-two",
-      "https://bit.ly/dice-three",
-      "https://bit.ly/dice-four",
-      "https://bit.ly/dice-five",
-      "https://bit.ly/dice-six"
-    ];
-
-    image.style.animation = "spindice 0.25s"
-    setTimeout(() => {
-      image.setAttribute("src", diceFaces[this.getRandomInt(1, 6)]);
-                        }, 125);
-    
-    setTimeout(function(){ image.style.animation = "none"
-                        }, 250);
-  }
+  
 
   //_________________
 

@@ -14,6 +14,10 @@ const routes: Routes = [
   {
     path: 'dice',
     loadChildren: () => import('./dice/dice.module').then( m => m.DicePageModule)
+  },
+  {
+    path: 'password',
+    loadChildren: () => import('./password/password.module').then( m => m.PasswordPageModule)
   }
 ];
 

@@ -18,6 +18,10 @@ export class FolderPage implements OnInit {
     this.router.navigate(['/dice'])
   }
 
+  goToPassword(){
+    this.router.navigate(['/password'])
+  }
+
   ngOnInit() {
     this.folder = this.activatedRoute.snapshot.paramMap.get('id');
 
@@ -52,35 +56,5 @@ export class FolderPage implements OnInit {
     console.log(randomNumbers)
   }
 
-  rollThatDiceJUNK() {
-    console.log("aaa")
-  }
-
-  
-
-  //_________________
-
-  makeid() {
-    let uppercaseLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    let lowwercaseLetters = 'abcdefghijklmnopqrstuvwxyz';
-    let numbers = '0123456789';
-    let specialCaracteres = '!@#$%&'
-    let howMuchLength = 5;
-
-    var result           = '';
-    var characters = uppercaseLetters+lowwercaseLetters+numbers+specialCaracteres;
-    // var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    var charactersLength = characters.length;
-    for ( var i = 0; i < howMuchLength; i++ ) {
-       result += characters.charAt(Math.floor(Math.random() * charactersLength));
-    }
-    return result;
- }
- 
- junk() {
-  console.log(this.makeid());
- }
-
- 
 
 }
